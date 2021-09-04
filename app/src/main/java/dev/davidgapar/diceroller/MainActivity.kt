@@ -1,13 +1,15 @@
 package dev.davidgapar.diceroller
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * This activity allows the user to roll a dice and view the result
+ * on the screen.
+ */
 class MainActivity : AppCompatActivity() {
-
-    private val LOG_TAG = "Main Activity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,6 +19,9 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener { rollDice() }
     }
 
+    /**
+     * Roll the dice and update the screen with the result.
+     */
     private fun rollDice() {
         val textView: TextView = findViewById(R.id.textView)
         textView.text = Dice(6).roll().toString()
